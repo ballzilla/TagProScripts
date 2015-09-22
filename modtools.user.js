@@ -52,8 +52,13 @@ if (window.location.pathname.indexOf("reports") > -1) {
         return moment(e).format("LLL")
     }
 
-    function bindChatTo(e) {
-        return e ? e == 1 ? "All" : "Team" : ""
+    function bindChatTo(e) {     
+        switch (e) {
+                case 1: return "All";
+                case 2: return "Team";
+                case 3: return "Mod";
+                default: return "";
+        }
     }
 
     function bindUserId(e) {
